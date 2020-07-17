@@ -18,7 +18,7 @@ public class Player {
 		hand.addCard(pc);
 	}
 	
-	public void removeCard() {
-		hand.removeCard();
+	public PlayingCards removeCard() {
+		return hand.removeCard();
 	}
 }

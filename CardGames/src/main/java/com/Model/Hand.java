@@ -18,8 +18,8 @@ public class Hand {
 		cards.add(pc);
 	}
 	
-	public void removeCard() {
-		cards.remove(0);
+	public PlayingCards removeCard() {
+		return cards.remove(0);
 	}
 	
 	

@@ -81,4 +81,18 @@ public class GameController {
 			view.something();
 		}
 	}
+	
+	public void evaluateWinner() {
+		
+	}
+	
+	public void displayWinner() {
+		view.something();
+	}
+	
+	public void rebuildDeck() {
+		for (Player player : players) {
+			deck.returnCardToDeck(player.removeCard());
+		}
+	}
 }
