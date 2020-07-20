@@ -33,7 +33,7 @@ public class GameController {
 		view.setController(this);
 	}
 	
-	public void run() {
+	public void runMe() {
 		while (true) {
 			switch(gameState) {
 			case AddingPlayers:
