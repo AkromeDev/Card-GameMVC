@@ -9,6 +9,34 @@ import com.Model.PlayingCards;
 class View {
 	public void something() {}
 	public void setController(GameController gc) {}
+	public void promptForPlayerName() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void promtForFlip() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void promptForNewGame() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void showPlayerName(int size, String playerName) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void showFaceDownCardForPlayer(int i, String name) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void showCardForPlayer(int i, String name, String string, String string2) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void showWinner(String name) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
 public class GameController {
@@ -37,15 +65,15 @@ public class GameController {
 		while (true) {
 			switch(gameState) {
 			case AddingPlayers:
-				view.something();
+				view.promptForPlayerName();
 				break;
 				
 			case Cardsdealt:
-				view.something();
+				view.promtForFlip();
 				break;
 				
 			case WinnerRevealed:
-				view.something();
+				view.promptForNewGame();
 				break;
 			}
 		}
@@ -54,7 +82,7 @@ public class GameController {
 	public void addPlayer (String playerName) {
 		if (gameState == GameState.AddingPlayers) {
 			players.add(new Player(playerName));
-			view.something();
+			view.showPlayerName(players.size(), playerName);
 		}
 	}
 	
@@ -66,7 +94,7 @@ public class GameController {
 			
 			for (Player player : players) {
 				player.addCardToHand(deck.removeTopCard());
-				view.something();
+				view.showFaceDownCardForPlayer(playerIndex++, player.getName());
 			}
 		
 		gameState = GameState.Cardsdealt;
@@ -74,11 +102,13 @@ public class GameController {
 		}
 	}
 	
-	public void flippingcard() {
+	public void flipCards() {
+		int playerIndex = 1;
+		
 		for (Player player: players) {
 			PlayingCards pc = player.getCard(0);
 			pc.flip();
-			view.something();
+			view.showCardForPlayer(playerIndex++, player.getName(), pc.getRank().toString(), pc.getSuit().toString());
 		}
 	}
 	
@@ -119,7 +149,7 @@ public class GameController {
 	}
 	
 	public void displayWinner() {
-		view.something();
+		view.showWinner(winner.getName());
 	}
 	
 	public void rebuildDeck() {
