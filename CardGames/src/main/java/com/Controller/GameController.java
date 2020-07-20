@@ -83,6 +83,38 @@ public class GameController {
 	}
 	
 	public void evaluateWinner() {
+		Player bestPlayer = null;
+		int bestRank = -1;
+		int bestSuit = -1;
+		
+		for (Player player: players) {
+			boolean newBestPlayer = false;
+			
+			if (bestPlayer == null) {
+				newBestPlayer = true;
+				
+			} else {
+				PlayingCards pc = player.getCard(0);
+				
+				if (pc.getRank().value() == bestRank) {
+					if (pc.getSuit().value() > bestSuit) {
+						newBestPlayer = true;
+					}
+					
+				} else if (pc.getRank().value() > bestRank) {
+					newBestPlayer = true;
+				}
+			}
+			
+			if (newBestPlayer = true) {
+				bestPlayer = player;
+				PlayingCards pc = player.getCard(0);
+				bestRank = pc.getRank().value();
+				bestSuit = pc.getSuit().value();
+			}
+		}
+		
+		winner = bestPlayer;
 		
 	}
 	
@@ -92,7 +124,7 @@ public class GameController {
 	
 	public void rebuildDeck() {
 		for (Player player : players) {
-			deck.returnCardToDeck(player.removeCard());
+			deck.returnCardToDeck(player.removeCard()); 
 		}
 	}
 }
