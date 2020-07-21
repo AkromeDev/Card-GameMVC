@@ -1,14 +1,27 @@
 package com.View;
 
+import java.util.Scanner;
+
 import com.Controller.GameController;
 
 public class View {
 	
-	public void setController(GameController gc) {}
-	public void promptForPlayerName() {
-		// TODO Auto-generated method stub
-		
+	GameController controller;
+	Scanner keyboard = new Scanner(System.in);
+	
+	public void setController(GameController gc) {
+		controller = gc;
 	}
+	public void promptForPlayerName() {
+		String name = keyboard.nextLine();
+		
+		if(name.isEmpty()) {
+			controller.startGame(); 
+		} else {
+			controller.addPlayer(name);
+		}
+	}
+	
 	public void promtForFlip() {
 		// TODO Auto-generated method stub
 		
