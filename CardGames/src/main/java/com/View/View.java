@@ -23,9 +23,11 @@ public class View {
 	}
 	
 	public void promtForFlip() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Press enter to see the cards.");
+		keyboard.hasNextLine();
+		controller.flipCards();
 	}
+	
 	public void promptForNewGame() {
 		// TODO Auto-generated method stub
 		
