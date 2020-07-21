@@ -33,20 +33,19 @@ public class View {
 		keyboard.hasNextLine();
 		controller.startGame();
 	}
-	public void showPlayerName(int size, String playerName) {
-		// TODO Auto-generated method stub
+	public void showPlayerName(int index, String playerName) {
+		System.out.println("Player " + index + ": " + playerName );
 		
 	}
-	public void showFaceDownCardForPlayer(int i, String name) {
-		// TODO Auto-generated method stub
+	public void showFaceDownCardForPlayer(int index, String name) {
+		System.out.println("Player " + index + ": " + name + " [][]");
 		
 	}
-	public void showCardForPlayer(int i, String name, String string, String string2) {
-		// TODO Auto-generated method stub
+	public void showCardForPlayer(int index, String name, String rank, String suit) {
+		System.out.println("Player " + index + ": " + name + " [" + rank + "]" + "[" + suit + "]");
 		
 	}
 	public void showWinner(String name) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("And the winner is...... " + name + "!!!!");
 	}
 }
