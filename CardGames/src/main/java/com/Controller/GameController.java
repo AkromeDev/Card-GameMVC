@@ -5,39 +5,7 @@ import java.util.ArrayList;
 import com.Model.Deck;
 import com.Model.Player;
 import com.Model.PlayingCards;
-
-class View {
-	public void something() {}
-	public void setController(GameController gc) {}
-	public void promptForPlayerName() {
-		// TODO Auto-generated method stub
-		
-	}
-	public void promtForFlip() {
-		// TODO Auto-generated method stub
-		
-	}
-	public void promptForNewGame() {
-		// TODO Auto-generated method stub
-		
-	}
-	public void showPlayerName(int size, String playerName) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void showFaceDownCardForPlayer(int i, String name) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void showCardForPlayer(int i, String name, String string, String string2) {
-		// TODO Auto-generated method stub
-		
-	}
-	public void showWinner(String name) {
-		// TODO Auto-generated method stub
-		
-	}
-}
+import com.View.View;
 
 public class GameController {
 	
@@ -118,6 +86,7 @@ public class GameController {
 		int bestSuit = -1;
 		
 		for (Player player: players) {
+			@SuppressWarnings("unused")
 			boolean newBestPlayer = false;
 			
 			if (bestPlayer == null) {
