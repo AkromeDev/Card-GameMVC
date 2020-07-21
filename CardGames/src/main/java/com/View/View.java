@@ -29,8 +29,9 @@ public class View {
 	}
 	
 	public void promptForNewGame() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Press enter to begin a new game.");
+		keyboard.hasNextLine();
+		controller.startGame();
 	}
 	public void showPlayerName(int size, String playerName) {
 		// TODO Auto-generated method stub
