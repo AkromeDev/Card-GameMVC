@@ -15,10 +15,11 @@ public class GameController {
 		WinnerRevealed
 	}
 	
-	Deck deck;
+	Deck deck = new Deck();
 	ArrayList<Player> players;
-	Player winner;
-	View view;
+	Player winner = new Player(null);
+	Player player = new Player(null);
+	View view = new View();
 	GameState gameState;
 	
 	public GameController (View view, Deck deck) {
@@ -49,8 +50,10 @@ public class GameController {
 	
 	public void addPlayer (String playerName) {
 		if (gameState == GameState.AddingPlayers) {
-			players.add(new Player(playerName));
-			view.showPlayerName(players.size(), playerName);
+			Player newPlayer = new Player(playerName);
+			players.add(newPlayer);
+			System.out.println(players);
+			view.showPlayerName(players.size(), newPlayer.getName());
 		}
 	}
 	

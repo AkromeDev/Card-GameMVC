@@ -12,13 +12,16 @@ public class View {
 	public void setController(GameController gc) {
 		controller = gc;
 	}
+	
 	public void promptForPlayerName() {
+		System.out.println("Enter the name of the player:");
 		String name = keyboard.nextLine();
 		
 		if(name.isEmpty()) {
 			controller.startGame(); 
 		} else {
 			controller.addPlayer(name);
+			System.out.println("(Press enter a second time to begin the game)");
 		}
 	}
 	

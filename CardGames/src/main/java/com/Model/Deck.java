@@ -13,7 +13,7 @@ public class Deck {
 		
 		for (Suit suit : Suit.values()) {
 			for (Rank rank : Rank.values()) {
-				System.out.println("Creating Card: " + suit + rank);
+				System.out.println("Creating Card: " + rank + " - " + suit);
 				card.add(new PlayingCards(rank, suit));
 			}
 		}
