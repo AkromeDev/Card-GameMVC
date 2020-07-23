@@ -2,13 +2,14 @@ package com.Model;
 
 public class PlayingCards {
 	
-	Rank rank;
-	Suit suit;
-	boolean faceUp = false;
+	private final Rank rank;
+	private final Suit suit;
+	private boolean faceUp;
 	
 	public PlayingCards (Rank rank, Suit suit) {
-		rank = this.rank;
-		suit = this.suit;
+		this.rank = rank;
+		this.suit = suit;
+		faceUp = false;
 	}
 	
 	public Rank getRank() {
