@@ -30,11 +30,17 @@ public class Deck {
 	}
 	
 	public PlayingCards removeTopCard() {
-		return card.remove(0);
+		PlayingCards removedCard = card.remove(0);
+		return removedCard;
 	}
 	
 	public void returnCardToDeck(PlayingCards pc) {
 		card.add(pc);
+	}
+	
+	public int numberOfCardsinDeck() {
+		int numberOfCards = card.size();
+		return numberOfCards;
 	}
 
 }

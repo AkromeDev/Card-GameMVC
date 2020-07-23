@@ -4,7 +4,7 @@ public class PlayingCards {
 	
 	Rank rank;
 	Suit suit;
-	boolean faceUp;
+	boolean faceUp = false;
 	
 	public PlayingCards (Rank rank, Suit suit) {
 		rank = this.rank;

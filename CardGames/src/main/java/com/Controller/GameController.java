@@ -52,7 +52,6 @@ public class GameController {
 		if (gameState == GameState.AddingPlayers) {
 			Player newPlayer = new Player(playerName);
 			players.add(newPlayer);
-			System.out.println(players);
 			view.showPlayerName(players.size(), newPlayer.getName());
 		}
 	}
@@ -64,7 +63,8 @@ public class GameController {
 			int playerIndex = 1;
 			
 			for (Player player : players) {
-				player.addCardToHand(deck.removeTopCard());
+				PlayingCards card = deck.removeTopCard();
+				player.addCardToHand(card);
 				view.showFaceDownCardForPlayer(playerIndex++, player.getName());
 			}
 		

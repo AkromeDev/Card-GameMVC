@@ -6,8 +6,8 @@ public class Player {
 	Hand hand;
 	
 	public Player(String name) {
-		name = this.name;
-		hand = new Hand();
+		this.name = name;
+		this.hand = new Hand();
 	}
 	
 	public PlayingCards getCard(int index) {
