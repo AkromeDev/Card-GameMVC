@@ -126,7 +126,7 @@ public class GameController {
 	
 	public void rebuildDeck() {
 		for (Player player : players) {
-			deck.returnCardToDeck(player.removeCard()); 
+			deck.returnCardToEndOfTheDeck(player.removeCard()); 
 		}
 	}
 }
