@@ -10,7 +10,7 @@ public enum Suit {
 	int suit;
 	
 	private Suit (int value) {
-		suit = value;
+		this.suit = value;
 	}
 	
 	public int value () {

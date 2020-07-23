@@ -19,7 +19,7 @@ public enum Rank {
 	int rank;
 	
 	private Rank (int value) {
-		rank = value;
+		this.rank = value;
 	}
 	
 	public int value () {
