@@ -34,8 +34,12 @@ public class Deck {
 		return removedCard;
 	}
 	
-	public void returnCardToDeck(PlayingCards pc) {
+	public void returnCardToEndOfTheDeck(PlayingCards pc) {
 		card.add(pc);
+	}
+	
+	public void returnCardToBeginningOfTheDeck(PlayingCards pc) {
+		card.add(0, pc);
 	}
 	
 	public int numberOfCardsinDeck() {
