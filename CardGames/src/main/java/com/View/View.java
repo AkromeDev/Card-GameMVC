@@ -27,7 +27,7 @@ public class View {
 	
 	public void promtForFlip() {
 		System.out.println("Press enter to see the cards.");
-		keyboard.hasNextLine();
+		keyboard.nextLine();
 		controller.flipCards();
 	}
 	

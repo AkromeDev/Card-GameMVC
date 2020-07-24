@@ -18,7 +18,7 @@ public class GameController {
 	Deck deck = new Deck();
 	ArrayList<Player> players;
 	Player winner = new Player(null);
-	Player player = new Player(null);
+	Player player;
 	View view = new View();
 	GameState gameState;
 	
@@ -81,6 +81,10 @@ public class GameController {
 			pc.flip();
 			view.showCardForPlayer(playerIndex++, player.getName(), pc.getRank().toString(), pc.getSuit().toString());
 		}
+		
+		evaluateWinner();
+		displayWinner();
+        rebuildDeck();
 	}
 	
 	public void evaluateWinner() {
@@ -89,13 +93,13 @@ public class GameController {
 		int bestSuit = -1;
 		
 		for (Player player: players) {
-			@SuppressWarnings("unused")
 			boolean newBestPlayer = false;
 			
 			if (bestPlayer == null) {
 				newBestPlayer = true;
 				
 			} else {
+				newBestPlayer = false;
 				PlayingCards pc = player.getCard(0);
 				
 				if (pc.getRank().value() == bestRank) {
@@ -108,7 +112,7 @@ public class GameController {
 				}
 			}
 			
-			if (newBestPlayer = true) {
+			if (newBestPlayer) {
 				bestPlayer = player;
 				PlayingCards pc = player.getCard(0);
 				bestRank = pc.getRank().value();
@@ -127,6 +131,8 @@ public class GameController {
 	public void rebuildDeck() {
 		for (Player player : players) {
 			deck.returnCardToEndOfTheDeck(player.removeCard()); 
+			
+			gameState = GameState.WinnerRevealed;
 		}
 	}
 }
